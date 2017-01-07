@@ -5,10 +5,6 @@
  */
 package trenelectromagnetico;
 
-/**
- *
- * @author Elisabet Alvarez
- */
-public class ListaPrueba {
+public class ListaRegistro {
     
 }

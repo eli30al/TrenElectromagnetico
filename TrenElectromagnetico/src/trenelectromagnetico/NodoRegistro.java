@@ -1,6 +1,6 @@
 
 package trenelectromagnetico;
 
-public class NodoPrueba {
+public class NodoRegistro {
     
 }
