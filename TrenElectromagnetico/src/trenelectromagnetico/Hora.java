@@ -6,6 +6,10 @@ public class Hora {
     private int min;
     private int seg;
 
+    public Hora (String hora){
+        
+    }
+    
     public Hora(int hora, int min, int seg) {
         this.hora = hora;
         this.min = min;

@@ -64,7 +64,7 @@ public class Vuelta {
         return llegada;
     }
 
-    public void setLlegada(Hora llegada) {
+    public void setLlegada(String hora) {
         this.llegada = llegada;
     }
 
@@ -72,7 +72,7 @@ public class Vuelta {
         return salida;
     }
 
-    public void setSalida(Hora salida) {
+    public void setSalida(String hora) {
         this.salida = salida;
     }
     

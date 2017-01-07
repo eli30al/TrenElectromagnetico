@@ -5,6 +5,7 @@ package trenelectromagnetico;
 public class Main {
 
     public static void main(String[] args) {
-       Conexion c = new Conexion();
+        Conexion c = new Conexion();
     
+    }
 }
