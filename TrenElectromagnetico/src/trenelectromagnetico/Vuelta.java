@@ -75,6 +75,4 @@ public class Vuelta {
     public void setSalida(String hora) {
         this.salida = salida;
     }
-    
-    
 }
