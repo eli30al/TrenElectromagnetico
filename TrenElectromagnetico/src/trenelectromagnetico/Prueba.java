@@ -9,5 +9,4 @@ public class Prueba {
     private int codigo;
     private Hora llegada;
     private Hora salida;
-    
 }
