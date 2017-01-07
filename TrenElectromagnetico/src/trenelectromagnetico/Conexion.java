@@ -51,15 +51,13 @@ public class Conexion {
             //creamos el flujo de datos por el que se enviara un mensaje
             DataOutputStream mensaje = new DataOutputStream(sc.getOutputStream());
             //enviamos el mensaje
-<<<<<<< HEAD
             mensaje.writeUTF("hola que tal!!");
 //            BufferedReader entrada = new BufferedReader(new InputStreamReader(sc.getInputStream()));
 //            System.out.println(entrada);
 //            cerramos la conexión
-=======
+
             mensaje.writeUTF("Hola que tal!!");
             //cerramos la conexión
->>>>>>> origin/master
             sc.close();
         }catch(Exception e )
         {
