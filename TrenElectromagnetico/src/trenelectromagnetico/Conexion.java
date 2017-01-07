@@ -60,7 +60,7 @@ public class Conexion {
             //creamos el flujo de datos por el que se enviara un mensaje
             DataOutputStream mensaje = new DataOutputStream(sc.getOutputStream());
             //enviamos el mensaje
-            mensaje.writeUTF("hola que tal!!");
+            mensaje.writeUTF("Hola que tal!!");
             //cerramos la conexión
             sc.close();
         }catch(Exception e )

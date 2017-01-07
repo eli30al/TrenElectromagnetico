@@ -16,7 +16,7 @@ public class Main {
      */
     public static void main(String[] args) {
        Conexion c = new Conexion();
-        while(true){c.initServer();}
+       while(true){c.initServer();}
     }
     
 }
