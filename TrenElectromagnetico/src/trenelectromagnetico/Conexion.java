@@ -6,6 +6,7 @@
 package trenelectromagnetico;
 
 import java.io.BufferedReader;
+import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.InputStreamReader;
 import java.net.ServerSocket;
@@ -44,6 +45,25 @@ public class Conexion {
             sc.close();//Aqui se cierra la conexión con el cliente
 
         }catch(Exception e)
+        {
+            System.out.println("Error: "+e.getMessage());
+        }
+    }
+    
+    final String HOST = "localhost";
+    
+    public void initClient() 
+    {
+        try
+        {
+            Socket sc = new Socket( HOST , PUERTO ); /*conectar a un servidor en localhost con puerto 5000*/
+            //creamos el flujo de datos por el que se enviara un mensaje
+            DataOutputStream mensaje = new DataOutputStream(sc.getOutputStream());
+            //enviamos el mensaje
+            mensaje.writeUTF("hola que tal!!");
+            //cerramos la conexión
+            sc.close();
+        }catch(Exception e )
         {
             System.out.println("Error: "+e.getMessage());
         }
