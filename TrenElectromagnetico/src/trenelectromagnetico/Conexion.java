@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package trenelectromagnetico;
 
 import java.io.BufferedReader;
@@ -12,10 +7,6 @@ import java.io.InputStreamReader;
 import java.net.ServerSocket;
 import java.net.Socket;
 
-/**
- *
- * @author Elisabet Alvarez
- */
 public class Conexion {
     final int PUERTO=5000;
 
@@ -50,18 +41,20 @@ public class Conexion {
         }
     }
     
-    final String HOST = "localhost";
+    final String HOST = "192.168.22.223";
     
     public void initClient() 
     {
         try
         {
-            Socket sc = new Socket( HOST , PUERTO ); /*conectar a un servidor en localhost con puerto 5000*/
+            Socket sc = new Socket( HOST , PUERTO ); /*conectar a un servidor en host con puerto 5000*/
             //creamos el flujo de datos por el que se enviara un mensaje
             DataOutputStream mensaje = new DataOutputStream(sc.getOutputStream());
             //enviamos el mensaje
             mensaje.writeUTF("hola que tal!!");
-            //cerramos la conexión
+//            BufferedReader entrada = new BufferedReader(new InputStreamReader(sc.getInputStream()));
+//            System.out.println(entrada);
+//            cerramos la conexión
             sc.close();
         }catch(Exception e )
         {
