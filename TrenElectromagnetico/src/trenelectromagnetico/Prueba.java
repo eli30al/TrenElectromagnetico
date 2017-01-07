@@ -1,14 +1,13 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package trenelectromagnetico;
 
-/**
- *
- * @author Elisabet Alvarez
- */
 public class Prueba {
+    private String ruta;
+    private int pasajeros;
+    private float velocidad;
+    private float tiempo;
+    private int codigo;
+    private Hora llegada;
+    private Hora salida;
     
 }
