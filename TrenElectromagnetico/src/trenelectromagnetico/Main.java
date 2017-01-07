@@ -6,12 +6,12 @@ import java.util.Scanner;
 
 public class Main {
     
-    	public static String leerString(String mensaje){
+    public static String leerString(String mensaje){
         Scanner ingreso=new Scanner(System.in);
         System.out.println(""+mensaje);
         String dato=ingreso.nextLine();
         return dato;             
-   }
+    }
 
     public static void main(String[] args) {
     

@@ -10,5 +10,15 @@ package trenelectromagnetico;
  * @author Elisabet Alvarez
  */
 public class ListaVuelta {
+    NodoVuelta inicio;
+    NodoVuelta fin;
     
+    public ListaVuelta(){
+        inicio=fin=null;
+    }
+    
+    public void agregar(Vuelta dato){
+        NodoVuelta aux = new NodoVuelta(dato,null);
+        
+    }
 }
