@@ -68,5 +68,25 @@ public class Hora {
             if(seg<10)e= "0"+seg;
              return c+":"+d+":"+e;
     }
+    
+//        public void OrdenRegistro(){
+//        Nodo aux=inicio;
+//        Celular var;
+//        while(aux!=fin)
+//        {
+//            Nodo aux1= aux.getSiguiente();
+//            while(aux1!=null)
+//            {
+//                if(aux.getCelular().getPrecio() > aux1.getCelular().getPrecio())
+//                {
+//                    var=aux.getCelular();
+//                    aux.setCelular(aux1.getCelular());
+//                    aux1.setCelular(var);
+//                }
+//                aux1=aux1.getSiguiente();
+//            }
+//            aux=aux.getSiguiente();
+//        }
+//    } 
 
 }
