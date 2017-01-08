@@ -6,7 +6,7 @@ public class NodoRegistro {
    private NodoRegistro sig;
    private NodoRegistro ant;
 
-    public NodoRegistro(Vuelta dato, NodoRegistro sig, NodoRegistro ant) {
+    public NodoRegistro(NodoRegistro ant, Vuelta dato, NodoRegistro sig) {
         this.dato = dato;
         this.sig = sig;
         this.ant = ant;
@@ -17,7 +17,7 @@ public class NodoRegistro {
         this.ant = ant;
     }
     
-    public NodoRegistro(Vuelta dato, NodoRegistro ant) {
+    public NodoRegistro(Vuelta dato, NodoRegistro sig) {
         this.dato = dato;
         this.ant = sig;
     }
