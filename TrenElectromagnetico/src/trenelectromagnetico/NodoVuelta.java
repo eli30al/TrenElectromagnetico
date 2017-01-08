@@ -47,7 +47,4 @@ public class NodoVuelta { //lista doble
         this.ant = ant;
     }
     
-   
-   
-    
 }

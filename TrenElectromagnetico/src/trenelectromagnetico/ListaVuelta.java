@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package trenelectromagnetico;
 
 public class ListaVuelta {
@@ -12,7 +8,7 @@ public class ListaVuelta {
     public ListaVuelta(){
         inicio=fin=null;
     }
-    
+
     public void agregar(Vuelta dato){
         NodoVuelta aux = new NodoVuelta(dato,null);
         if(fin!=null){
@@ -23,6 +19,7 @@ public class ListaVuelta {
         }
         fin=aux;
     }
+
     public void ordenarCodigo(){
     NodoVuelta aux=inicio;
     Vuelta temp;
@@ -42,4 +39,6 @@ public class ListaVuelta {
         aux=aux.getSig();
     }
     } 
+    
+    
 }
