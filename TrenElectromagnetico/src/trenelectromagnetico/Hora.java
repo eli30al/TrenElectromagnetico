@@ -66,5 +66,7 @@ public class Hora {
             if(seg<10)e= "0"+seg;
              return c+":"+d+":"+e;
     }
+    
+    
 
 }

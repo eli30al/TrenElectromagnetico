@@ -2,31 +2,31 @@
 package trenelectromagnetico;
 
 public class NodoRegistro {
-    private Vuelta dato;
+    private Registro dato;
    private NodoRegistro sig;
    private NodoRegistro ant;
 
-    public NodoRegistro(NodoRegistro ant, Vuelta dato, NodoRegistro sig) {
+    public NodoRegistro(NodoRegistro ant, Registro dato, NodoRegistro sig) {
         this.dato = dato;
         this.sig = sig;
         this.ant = ant;
     }
     
-    public NodoRegistro(NodoRegistro ant, Vuelta dato) {
+    public NodoRegistro(NodoRegistro ant, Registro dato) {
         this.dato = dato;
         this.ant = ant;
     }
     
-    public NodoRegistro(Vuelta dato, NodoRegistro sig) {
+    public NodoRegistro(Registro dato, NodoRegistro sig) {
         this.dato = dato;
         this.ant = sig;
     }
 
-    public Vuelta getDato() {
+    public Registro getDato() {
         return dato;
     }
 
-    public void setDato(Vuelta dato) {
+    public void setDato(Registro dato) {
         this.dato = dato;
     }
 

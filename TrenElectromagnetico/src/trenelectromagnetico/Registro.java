@@ -71,5 +71,10 @@ public class Registro {
     public void setPeso(float peso) {
         this.peso = peso;
     }
+
+    @Override
+    public String toString() {
+        return "Registro{" + "fecha=" + fecha + ", responsable=" + responsable + ", vueltas=" + vueltas + ", listavuelta=" + listavuelta + ", vueltarapida=" + vueltarapida + ", vueltalenta=" + vueltalenta + ", peso=" + peso + '}';
+    }
  
 }
