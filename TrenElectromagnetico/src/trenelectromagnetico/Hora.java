@@ -67,6 +67,19 @@ public class Hora {
              return c+":"+d+":"+e;
     }
     
-    
+    public Boolean isMayor(Hora hora2){
+        if(hora>hora2.getHora())
+            return true;
+        else if(hora==hora2.getHora()){
+            if(min>hora2.getMin())
+            return true;
+            else if (min==hora2.getMin()){
+                if(seg>hora2.getSeg())
+                return true;
+            }
+        }
+        return false;
+    }   
+     
 
 }

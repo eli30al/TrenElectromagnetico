@@ -129,26 +129,45 @@ public class ListaVuelta {
         }
         return modelo;
      }
-    //:)
-//    public void ordenarLlegada(){
-//    NodoVuelta aux=inicio;
-//    Vuelta temp;
-//    while(aux!=fin)
-//    {
-//        NodoVuelta aux1= aux.getSig();
-//        while(aux1!=null)
-//        {
-//            if(aux.getDato().getLlegada().toString().compareTo(aux1.getDato().getLlegada())>0)
-//            {
-//                temp=aux.getDato();
-//                aux.setDato(aux1.getDato());
-//                aux1.setDato(temp);
-//            }
-//            aux1=aux1.getSig();
-//        }
-//        aux=aux.getSig();
-//    }
-//    } 
     
+    public void ordenarLlegada(){
+    NodoVuelta aux=inicio;
+    Vuelta temp;
+    while(aux!=fin)
+    {
+        NodoVuelta aux1= aux.getSig();
+        while(aux1!=null)
+        {
+            if(aux.getDato().getLlegada().isMayor(aux1.getDato().getLlegada()))
+            {
+                temp=aux.getDato();
+                aux.setDato(aux1.getDato());
+                aux1.setDato(temp);
+            }
+            aux1=aux1.getSig();
+        }
+        aux=aux.getSig();
+    }
+    } 
+ 
+    public void ordenarSalida(){
+    NodoVuelta aux=inicio;
+    Vuelta temp;
+    while(aux!=fin)
+    {
+        NodoVuelta aux1= aux.getSig();
+        while(aux1!=null)
+        {
+            if(aux.getDato().getSalida().isMayor(aux1.getDato().getSalida()))
+            {
+                temp=aux.getDato();
+                aux.setDato(aux1.getDato());
+                aux1.setDato(temp);
+            }
+            aux1=aux1.getSig();
+        }
+        aux=aux.getSig();
+    }
+    } 
     
 }
