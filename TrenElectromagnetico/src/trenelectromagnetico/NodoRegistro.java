@@ -2,7 +2,7 @@
 package trenelectromagnetico;
 
 public class NodoRegistro {
-    private Vuelta dato;
+   private Vuelta dato;
    private NodoRegistro sig;
    private NodoRegistro ant;
 
