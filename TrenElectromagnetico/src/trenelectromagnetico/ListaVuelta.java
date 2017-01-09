@@ -1,6 +1,8 @@
 
 package trenelectromagnetico;
 
+import javax.swing.table.DefaultTableModel;
+
 public class ListaVuelta {
     NodoVuelta inicio;
     NodoVuelta fin;
@@ -109,6 +111,24 @@ public class ListaVuelta {
         aux=aux.getSig();
     }
     } 
+    public DefaultTableModel modeloTabla(DefaultTableModel model){
+        DefaultTableModel modelo= model;
+        modelo.setRowCount(0);
+        Object [] fila=new Object[7]; 
+        NodoVuelta aux= inicio;
+        while(aux!=null){
+            fila[0]=aux.getDato().getCodigo();
+            fila[1]=aux.getDato().getRuta(); 
+            fila[2]=aux.getDato().getPasajeros(); 
+            fila[3]=aux.getDato().getSalida().toString(); 
+            fila[4]=aux.getDato().getLlegada().toString(); 
+            fila[5]=aux.getDato().getTiempo(); 
+            fila[6]=aux.getDato().getVelocidad(); 
+            modelo.addRow(fila); 
+            aux=aux.getSig();
+        }
+        return modelo;
+     }
     //:)
 //    public void ordenarLlegada(){
 //    NodoVuelta aux=inicio;

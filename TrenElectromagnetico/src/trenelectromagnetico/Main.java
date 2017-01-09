@@ -32,5 +32,9 @@ public class Main {
         System.out.println("-------------------------------------------");
         l1.imprimir();
         
+        VentanaVueltas ve = new VentanaVueltas();
+        ve.elementosEnTabla(l1);
+        ve.setVisible(true);
+        
     }
 }
