@@ -109,7 +109,7 @@ public class ListaVuelta {
         aux=aux.getSig();
     }
     } 
-    
+    //:)
 //    public void ordenarLlegada(){
 //    NodoVuelta aux=inicio;
 //    Vuelta temp;
