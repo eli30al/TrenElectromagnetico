@@ -1,6 +1,8 @@
 
 package trenelectromagnetico;
 
+import javax.swing.table.DefaultTableModel;
+
 public class ListaRegistro {
         NodoRegistro inicio;
         NodoRegistro fin;
@@ -28,6 +30,24 @@ public class ListaRegistro {
             System.out.println(aux.getDato());
             imprimir(aux.getSig());
         }
+    }
+    public DefaultTableModel modeloTabla(DefaultTableModel model){
+        DefaultTableModel modelo= model;
+        modelo.setRowCount(0);
+        Object [] fila=new Object[7]; 
+        NodoRegistro aux= inicio;
+        while(aux!=null){
+            fila[0]=null;//aux.getDato().getCodigo();
+            fila[1]=aux.getDato().getResponsable(); 
+            fila[2]=aux.getDato().getVueltas(); 
+            fila[3]=aux.getDato().getFecha(); 
+            fila[4]=aux.getDato().getVueltarapida(); 
+            fila[5]=aux.getDato().getVueltalenta(); 
+            fila[6]=aux.getDato().getPeso(); 
+            modelo.addRow(fila); 
+            aux=aux.getSig();
+        }
+        return modelo;
     }
     
     public void ordenarFecha(){

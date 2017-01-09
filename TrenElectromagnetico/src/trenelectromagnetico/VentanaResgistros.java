@@ -11,16 +11,16 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author Elisabet Alvarez
  */
-public class VentanaVueltas extends javax.swing.JFrame {
+public class VentanaResgistros extends javax.swing.JFrame {
 
     /**
-     * Creates new form VentanaVueltas
+     * Creates new form VentanaResgistros
      */
-    public void elementosEnTabla(ListaVuelta list){
-        TableVueltas.setModel(list.modeloTabla((DefaultTableModel) TableVueltas.getModel()));
+    public void elementosEnTabla(ListaRegistro list){
+        TableRegistros.setModel(list.modeloTabla((DefaultTableModel) TableRegistros.getModel()));
     }
     
-    public VentanaVueltas() {
+    public VentanaResgistros() {
         initComponents();
         setLocationRelativeTo(null);
     }
@@ -35,18 +35,18 @@ public class VentanaVueltas extends javax.swing.JFrame {
     private void initComponents() {
 
         jScrollPane1 = new javax.swing.JScrollPane();
-        TableVueltas = new javax.swing.JTable();
+        TableRegistros = new javax.swing.JTable();
         ButtonAtras = new javax.swing.JButton();
         Titulo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        TableVueltas.setModel(new javax.swing.table.DefaultTableModel(
+        TableRegistros.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "Código", "Ruta", "Nº de Pasajeros", "Salida", "Llegada", "Duración", "Velocidad"
+                "Código", "Responsable", "Nº de vueltas", "Fecha", "Vuelta más rápida", "Vuelta más lenta", "Promedio de pasajeros"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -57,21 +57,12 @@ public class VentanaVueltas extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        TableVueltas.addMouseListener(new java.awt.event.MouseAdapter() {
+        TableRegistros.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                TableVueltasMouseClicked(evt);
+                TableRegistrosMouseClicked(evt);
             }
         });
-        jScrollPane1.setViewportView(TableVueltas);
-        if (TableVueltas.getColumnModel().getColumnCount() > 0) {
-            TableVueltas.getColumnModel().getColumn(0).setResizable(false);
-            TableVueltas.getColumnModel().getColumn(1).setResizable(false);
-            TableVueltas.getColumnModel().getColumn(2).setResizable(false);
-            TableVueltas.getColumnModel().getColumn(3).setResizable(false);
-            TableVueltas.getColumnModel().getColumn(4).setResizable(false);
-            TableVueltas.getColumnModel().getColumn(5).setResizable(false);
-            TableVueltas.getColumnModel().getColumn(6).setResizable(false);
-        }
+        jScrollPane1.setViewportView(TableRegistros);
 
         ButtonAtras.setText("Atrás");
         ButtonAtras.addActionListener(new java.awt.event.ActionListener() {
@@ -81,7 +72,7 @@ public class VentanaVueltas extends javax.swing.JFrame {
         });
 
         Titulo.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        Titulo.setText("VUELTAS");
+        Titulo.setText("REGISTROS");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -91,7 +82,7 @@ public class VentanaVueltas extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 672, Short.MAX_VALUE))
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 668, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
@@ -112,53 +103,52 @@ public class VentanaVueltas extends javax.swing.JFrame {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(ButtonAtras)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(20, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void TableRegistrosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TableRegistrosMouseClicked
+        if (evt.getClickCount() == 2) {
+            System.out.println("double clicked");
+            int columna = TableRegistros.getSelectedColumn();
+            switch(columna){
+                case 0:
+                //Main.r1.ordenarCodigo();
+                elementosEnTabla(Main.r1);
+                break;
+                case 2:
+                Main.r1.ordenarResponsable();
+                elementosEnTabla(Main.r1);
+                break;
+                case 3:
+                Main.r1.ordenarVuelta();
+                elementosEnTabla(Main.r1);
+                break;
+                case 4:
+                Main.r1.ordenarVuerapida();
+                elementosEnTabla(Main.r1);
+                break;
+                case 5:
+                Main.r1.ordenarVuelenta();
+                elementosEnTabla(Main.r1);
+                break;
+                case 6:
+                Main.r1.ordenarPeso();
+                elementosEnTabla(Main.r1);
+                break;
+                default:
+                break;
+
+            }
+
+        }
+    }//GEN-LAST:event_TableRegistrosMouseClicked
+
     private void ButtonAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonAtrasActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_ButtonAtrasActionPerformed
-
-    private void TableVueltasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TableVueltasMouseClicked
-       if (evt.getClickCount() == 2) {
-            System.out.println("double clicked");
-            int columna = TableVueltas.getSelectedColumn();
-            switch(columna){
-                case 0:
-                    Main.l1.ordenarCodigo();
-                    elementosEnTabla(Main.l1);
-                    break;
-                case 2:
-                    Main.l1.ordenarPasajeros();
-                    elementosEnTabla(Main.l1);
-                    break;
-                case 3:
-                    Main.l1.ordenarSalida();
-                    elementosEnTabla(Main.l1);
-                    break;
-                case 4:
-                    Main.l1.ordenarLlegada();
-                    elementosEnTabla(Main.l1);
-                    break;
-                case 5:
-                    Main.l1.ordenarTiempo();
-                    elementosEnTabla(Main.l1);
-                    break;
-                case 6:
-                    Main.l1.ordenarVelocidad();
-                    elementosEnTabla(Main.l1);
-                    break;
-                default:
-                    break;
-                
-            }
-                
-                    
-        }
-    }//GEN-LAST:event_TableVueltasMouseClicked
 
     /**
      * @param args the command line arguments
@@ -177,27 +167,27 @@ public class VentanaVueltas extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(VentanaVueltas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VentanaResgistros.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(VentanaVueltas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VentanaResgistros.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(VentanaVueltas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VentanaResgistros.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(VentanaVueltas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VentanaResgistros.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new VentanaVueltas().setVisible(true);
+                new VentanaResgistros().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton ButtonAtras;
-    private javax.swing.JTable TableVueltas;
+    private javax.swing.JTable TableRegistros;
     private javax.swing.JLabel Titulo;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
