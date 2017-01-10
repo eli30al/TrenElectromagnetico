@@ -31,14 +31,17 @@
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="1" attributes="0">
-                  <Group type="102" attributes="0">
+                  <Group type="102" alignment="1" attributes="0">
+                      <Component id="ButtonEmpezar" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
                       <Component id="Fecha" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
-                      <Component id="DateChooserFecha" min="-2" pref="178" max="-2" attributes="0"/>
+                      <Component id="DateChooserFecha" min="-2" pref="113" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="101" max="-2" attributes="0"/>
                   </Group>
-                  <Component id="ButtonEmpezar" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
           </Group>
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace max="32767" attributes="0"/>
@@ -51,13 +54,15 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="Titulo" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
-              <Component id="TextFieldResponsable" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="1" attributes="0">
-                  <Component id="DateChooserFecha" min="-2" pref="28" max="-2" attributes="0"/>
-                  <Component id="Fecha" min="-2" max="-2" attributes="0"/>
+                  <Group type="102" attributes="0">
+                      <Component id="Titulo" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
+                      <Component id="TextFieldResponsable" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                      <Component id="Fecha" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Component id="DateChooserFecha" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="117" max="32767" attributes="0"/>
               <Component id="ButtonEmpezar" min="-2" max="-2" attributes="0"/>
@@ -67,11 +72,6 @@
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="com.toedter.calendar.JDateChooser" name="DateChooserFecha">
-      <Properties>
-        <Property name="dateFormatString" type="java.lang.String" value="d/MM/yyyy"/>
-      </Properties>
-    </Component>
     <Component class="javax.swing.JToggleButton" name="ButtonEmpezar">
       <Properties>
         <Property name="text" type="java.lang.String" value="Empezar"/>
@@ -97,6 +97,8 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="jTextField1"/>
       </Properties>
+    </Component>
+    <Component class="com.toedter.calendar.JDateChooser" name="DateChooserFecha">
     </Component>
   </SubComponents>
 </Form>

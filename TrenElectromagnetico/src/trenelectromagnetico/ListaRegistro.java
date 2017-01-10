@@ -169,6 +169,15 @@ public class ListaRegistro {
         aux=aux.getSig();
     }
     }
-    
+    public NodoRegistro buscarIndice(int indice){
+        NodoRegistro aux= inicio;
+        int i=0;
+        while(aux!=null){
+            if(i==indice){return aux;}
+            i++;
+            aux=aux.getSig();
+        }
+        return null;
+    }
     
 }

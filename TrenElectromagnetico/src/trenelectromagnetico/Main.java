@@ -27,9 +27,7 @@ public class Main {
         l1.ordenarSalida();
         System.out.println("-------------------------------------------");
         l1.imprimir();
-        VentanaVueltas ve = new VentanaVueltas();
-        ve.elementosEnTabla(l1);
-        ve.setVisible(true);
+       
       
         
         r1.agregar(new Registro("1-8-2016", "Juan Lopez", 10,l1));

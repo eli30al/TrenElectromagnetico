@@ -164,8 +164,9 @@ public class VentanaResgistros extends javax.swing.JFrame {
 
     private void ButtonDetallesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonDetallesActionPerformed
        int fila = TableRegistros.getSelectedRow();
-       //Registro registro = Main.r1.buscarIndice(fila);
        VentanaVueltas vv= new VentanaVueltas();
+       vv.recibirRegistro(Main.r1.buscarIndice(fila));
+       vv.elementosEnTabla();
        vv.setVisible(true);
        
     }//GEN-LAST:event_ButtonDetallesActionPerformed

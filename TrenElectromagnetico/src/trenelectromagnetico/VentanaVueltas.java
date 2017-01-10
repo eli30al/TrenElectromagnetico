@@ -16,13 +16,17 @@ public class VentanaVueltas extends javax.swing.JFrame {
     /**
      * Creates new form VentanaVueltas
      */
-    public void elementosEnTabla(ListaVuelta list){
-        TableVueltas.setModel(list.modeloTabla((DefaultTableModel) TableVueltas.getModel()));
+    NodoRegistro registro;
+    public void elementosEnTabla(){
+        TableVueltas.setModel(registro.getDato().getListavuelta().modeloTabla((DefaultTableModel) TableVueltas.getModel()));
     }
     
     public VentanaVueltas() {
         initComponents();
         setLocationRelativeTo(null);
+    }
+    public void recibirRegistro(NodoRegistro registro){
+        this.registro= registro;
     }
 
     /**
@@ -128,28 +132,28 @@ public class VentanaVueltas extends javax.swing.JFrame {
             int columna = TableVueltas.getSelectedColumn();
             switch(columna){
                 case 0:
-                    Main.l1.ordenarCodigo();
-                    elementosEnTabla(Main.l1);
+                    registro.getDato().getListavuelta().ordenarCodigo();
+                    elementosEnTabla();
                     break;
                 case 2:
-                    Main.l1.ordenarPasajeros();
-                    elementosEnTabla(Main.l1);
+                    registro.getDato().getListavuelta().ordenarPasajeros();
+                    elementosEnTabla();
                     break;
                 case 3:
-                    Main.l1.ordenarSalida();
-                    elementosEnTabla(Main.l1);
+                    registro.getDato().getListavuelta().ordenarSalida();
+                    elementosEnTabla();
                     break;
                 case 4:
-                    Main.l1.ordenarLlegada();
-                    elementosEnTabla(Main.l1);
+                    registro.getDato().getListavuelta().ordenarLlegada();
+                    elementosEnTabla();
                     break;
                 case 5:
-                    Main.l1.ordenarTiempo();
-                    elementosEnTabla(Main.l1);
+                    registro.getDato().getListavuelta().ordenarTiempo();
+                    elementosEnTabla();
                     break;
                 case 6:
-                    Main.l1.ordenarVelocidad();
-                    elementosEnTabla(Main.l1);
+                    registro.getDato().getListavuelta().ordenarVelocidad();
+                    elementosEnTabla();
                     break;
                 default:
                     break;
