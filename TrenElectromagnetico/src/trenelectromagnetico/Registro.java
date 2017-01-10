@@ -1,5 +1,7 @@
 package trenelectromagnetico;
 
+import javax.swing.JOptionPane;
+
 public class Registro {
     private Fecha fecha;
     private String responsable;
@@ -21,6 +23,9 @@ public class Registro {
         this.listavuelta = listavuelta;
         this.peso = peso;
         setVueltas(listavuelta.calcularVueltas());
+    }
+
+    public Registro() {
     }
 
     public Fecha getFecha() {
@@ -77,8 +82,16 @@ public class Registro {
         return peso;
     }
 
-    public void setPeso(float peso) {
-        this.peso = peso;
+    public void setPeso(String numper) {
+	int num = 0;
+        do{
+        try {
+		num = Integer.parseInt(numper);
+		peso=(float)num*7/3;
+	} catch (NumberFormatException nfe){
+                numper=JOptionPane.showInputDialog("Ingrese la cantidad de pasajeros en numeros.");
+	}
+        }while(num==0);
     }
 
     @Override
