@@ -46,7 +46,7 @@ public class VentanaNuevoregistro extends javax.swing.JFrame {
             }
         });
 
-        jLabel3.setText("Numerp de pasajeros:");
+        jLabel3.setText("Numero de pasajeros:");
 
         ButtonEmpezar.setText("Empezar");
         ButtonEmpezar.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -61,6 +61,11 @@ public class VentanaNuevoregistro extends javax.swing.JFrame {
         });
 
         ButtonAtras.setText("Atras");
+        ButtonAtras.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ButtonAtrasMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -149,6 +154,14 @@ public class VentanaNuevoregistro extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Por favor llene todo los campos.");
         }
     }//GEN-LAST:event_ButtonEmpezarActionPerformed
+
+    private void ButtonAtrasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonAtrasMouseClicked
+
+        VentanaPrincipal vip = new VentanaPrincipal();
+        vip.setVisible(true);
+        dispose();
+        
+    }//GEN-LAST:event_ButtonAtrasMouseClicked
 
     /**
      * @param args the command line arguments

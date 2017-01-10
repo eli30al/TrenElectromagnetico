@@ -78,6 +78,11 @@ public class VentanaVueltas extends javax.swing.JFrame {
         }
 
         ButtonAtras.setText("Atrás");
+        ButtonAtras.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ButtonAtrasMouseClicked(evt);
+            }
+        });
         ButtonAtras.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ButtonAtrasActionPerformed(evt);
@@ -163,6 +168,13 @@ public class VentanaVueltas extends javax.swing.JFrame {
                     
         }
     }//GEN-LAST:event_TableVueltasMouseClicked
+
+    private void ButtonAtrasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonAtrasMouseClicked
+
+        VentanaNuevoregistro vn = new VentanaNuevoregistro();
+        vn.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_ButtonAtrasMouseClicked
 
     /**
      * @param args the command line arguments
