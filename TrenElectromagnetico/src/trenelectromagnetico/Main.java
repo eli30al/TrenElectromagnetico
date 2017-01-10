@@ -32,10 +32,10 @@ public class Main {
         ve.setVisible(true);
       
         
-        r1.agregar(new Registro("1-8-2016", "Juan Lopez", 10));
-        r1.agregar(new Registro("2-8-2016", "Felipe Sarmiento", 25));
-        r1.agregar(new Registro("1-5-2016", "Zaida Alvarez", 8));
-        r1.agregar(new Registro("4-8-2016", "Andres Guevara", 7));
+        r1.agregar(new Registro("1-8-2016", "Juan Lopez", 10,l1));
+        r1.agregar(new Registro("2-8-2016", "Felipe Sarmiento", 25,l1));
+        r1.agregar(new Registro("1-5-2016", "Zaida Alvarez", 8,l1));
+        r1.agregar(new Registro("4-8-2016", "Andres Guevara", 7,l1));
         VentanaResgistros vr = new VentanaResgistros();
         vr.elementosEnTabla(r1);
         vr.setVisible(true);

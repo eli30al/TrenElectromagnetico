@@ -38,6 +38,7 @@ public class VentanaResgistros extends javax.swing.JFrame {
         TableRegistros = new javax.swing.JTable();
         ButtonAtras = new javax.swing.JButton();
         Titulo = new javax.swing.JLabel();
+        ButtonDetalles = new javax.swing.JToggleButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -74,25 +75,30 @@ public class VentanaResgistros extends javax.swing.JFrame {
         Titulo.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         Titulo.setText("REGISTROS");
 
+        ButtonDetalles.setText("Detalles");
+        ButtonDetalles.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ButtonDetallesActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 668, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 668, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(311, 311, 311)
-                                .addComponent(Titulo))
-                            .addGroup(layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(ButtonAtras)))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addComponent(ButtonAtras)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(ButtonDetalles)))
                 .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addGap(292, 292, 292)
+                .addComponent(Titulo)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -102,7 +108,9 @@ public class VentanaResgistros extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(ButtonAtras)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(ButtonAtras)
+                    .addComponent(ButtonDetalles))
                 .addContainerGap(20, Short.MAX_VALUE))
         );
 
@@ -150,6 +158,14 @@ public class VentanaResgistros extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_ButtonAtrasActionPerformed
 
+    private void ButtonDetallesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonDetallesActionPerformed
+       int fila = TableRegistros.getSelectedRow();
+       Registro registro = Main.r1.buscarIndice(fila);
+       VentanaVueltas vv= new VentanaVueltas();
+       vv.setVisible(true);
+       
+    }//GEN-LAST:event_ButtonDetallesActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -187,6 +203,7 @@ public class VentanaResgistros extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton ButtonAtras;
+    private javax.swing.JToggleButton ButtonDetalles;
     private javax.swing.JTable TableRegistros;
     private javax.swing.JLabel Titulo;
     private javax.swing.JScrollPane jScrollPane1;

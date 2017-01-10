@@ -16,6 +16,14 @@ public class Registro {
         this.peso = peso;
     }
 
+    public Registro(String fecha, String responsable, float peso, ListaVuelta listavuelta) {
+        this.fecha = fecha;
+        this.responsable = responsable;
+        this.listavuelta = listavuelta;
+        this.peso = peso;
+        setVueltas(listavuelta.calcularVueltas());
+    }
+
     public String getFecha() {
         return fecha;
     }
@@ -46,6 +54,7 @@ public class Registro {
 
     public void setListavuelta(ListaVuelta listavuelta) {
         this.listavuelta = listavuelta;
+        setVueltas(listavuelta.calcularVueltas());
     }
 
     public float getVueltarapida() {

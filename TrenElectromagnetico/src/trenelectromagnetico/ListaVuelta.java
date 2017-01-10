@@ -169,5 +169,13 @@ public class ListaVuelta {
         aux=aux.getSig();
     }
     } 
-    
+    public int calcularVueltas(NodoVuelta aux){
+        if(aux!=null){
+            return 1 + calcularVueltas(aux.getSig());
+        }
+        return 0;
+    }
+    public int calcularVueltas(){
+        return calcularVueltas(inicio);
+    }
 }
