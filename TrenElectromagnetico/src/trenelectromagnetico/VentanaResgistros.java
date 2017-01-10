@@ -126,12 +126,16 @@ public class VentanaResgistros extends javax.swing.JFrame {
                 //Main.r1.ordenarCodigo();
                 elementosEnTabla(Main.r1);
                 break;
-                case 2:
+                case 1:
                 Main.r1.ordenarResponsable();
                 elementosEnTabla(Main.r1);
                 break;
-                case 3:
+                case 2:
                 Main.r1.ordenarVuelta();
+                elementosEnTabla(Main.r1);
+                break;
+                case 3:
+                Main.r1.ordenarFecha();
                 elementosEnTabla(Main.r1);
                 break;
                 case 4:

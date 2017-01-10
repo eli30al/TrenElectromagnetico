@@ -71,7 +71,7 @@ public class Fecha {
             if(anio<10)c= "0"+anio;
             if(mes<10)d= "0"+mes;
             if(dia<10)e= "0"+dia;
-             return c+":"+d+":"+e;
+             return e+"/"+d+"/"+c;
     }
     
     public Boolean isMayor(Fecha fecha2){
