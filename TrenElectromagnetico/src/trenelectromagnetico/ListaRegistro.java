@@ -58,7 +58,7 @@ public class ListaRegistro {
         NodoRegistro aux1= aux.getSig();
         while(aux1!=null)
         {
-            if(aux.getDato().getFecha().compareTo(aux1.getDato().getFecha())>0)
+            if(aux.getDato().getFecha().isMayor(aux1.getDato().getFecha()))
             {
                 temp=aux.getDato();
                 aux.setDato(aux1.getDato());

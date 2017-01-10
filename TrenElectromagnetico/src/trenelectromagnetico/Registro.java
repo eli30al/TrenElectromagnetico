@@ -1,8 +1,7 @@
-
 package trenelectromagnetico;
 
 public class Registro {
-    private String fecha;
+    private Fecha fecha;
     private String responsable;
     private int vueltas;
     private ListaVuelta listavuelta;
@@ -11,24 +10,25 @@ public class Registro {
     private float peso;
 
     public Registro(String fecha, String responsable, float peso) {
-        this.fecha = fecha;
+        this.fecha = new Fecha(fecha);
         this.responsable = responsable;
         this.peso = peso;
     }
 
     public Registro(String fecha, String responsable, float peso, ListaVuelta listavuelta) {
-        this.fecha = fecha;
+        this.fecha = new Fecha(fecha);
         this.responsable = responsable;
         this.listavuelta = listavuelta;
         this.peso = peso;
         setVueltas(listavuelta.calcularVueltas());
     }
 
-    public String getFecha() {
+    public Fecha getFecha() {
+
         return fecha;
     }
 
-    public void setFecha(String fecha) {
+    public void setFecha(Fecha fecha) {
         this.fecha = fecha;
     }
 
